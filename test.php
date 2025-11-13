@@ -1,0 +1,1 @@
+<?php echo "Test successful — Project folder is working!"; ?>

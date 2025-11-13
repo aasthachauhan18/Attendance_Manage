@@ -1,0 +1,16 @@
+# ====================================================
+# Apache Rewrite Rules for Friendly URLs
+# ====================================================
+# Example:
+#   /?route=students         -> /students
+#   /?route=attendance/mark  -> /attendance/mark
+# ====================================================
+
+RewriteEngine On
+
+# If the requested file or directory does not exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all other requests to index.php with 'route' parameter
+RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
